@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="hu" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechIntegrity Petíció</title>
+  <link rel="icon" href="https://www.techintegrity.hu/favicon.ico" type="image/x-icon">
+  <!-- EMBED SYSTEM -->
+  <meta name="description" content="TechIntegrity Aláírási Petíció – Kezdeményezési Projekt az informatikai infláció ellen. Írd alá, hogy megmutassuk: a RAM és az SSD nem a piaci kényuraké!">
+  <meta name="theme-color" content="#0057B8">
+  <meta property="og:url" content="https://peticio.techintegrity.hu">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="TechIntegrity Petíció">
+  <meta property="og:description" content="TechIntegrity Aláírási Petíció – Kezdeményezési Projekt az informatikai infláció ellen. Írd alá, hogy megmutassuk: a RAM és az SSD nem a piaci kényuraké!">
+  <meta property="og:image" content="https://database.techintegrity.hu/logos/tis-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="peticio.techintegrity.hu">
+  <meta property="twitter:url" content="https://peticio.techintegrity.hu">
+  <meta name="twitter:title" content="TechIntegrity Petíció">
+  <meta name="twitter:description" content="TechIntegrity Aláírási Petíció – Kezdeményezési Projekt az informatikai infláció ellen. Írd alá, hogy megmutassuk: a RAM és az SSD nem a piaci kényuraké!">
+  <meta name="twitter:image" content="https://database.techintegrity.hu/logos/tis-hero.png">
+  <!-- FONTING SYSTEM -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <style>
+    :root {
+      --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl:  clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+      --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.75rem;
+      --radius-xl: 1rem; --radius-2xl: 1.5rem; --radius-full: 9999px;
+      --font-display: 'Cabinet Grotesk', 'Georgia', sans-serif;
+      --font-body: 'Satoshi', 'Inter', sans-serif;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+      /* LIGHT MODE */
+      --color-bg:             #f4f4f6;
+      --color-surface:        #ffffff;
+      --color-surface-2:      #f8f8fa;
+      --color-surface-offset: #ebebed;
+      --color-divider:        #e0e0e4;
+      --color-border:         rgba(0,0,0,0.09);
+      --color-text:           #141418;
+      --color-text-muted:     #52525c;
+      --color-text-faint:     #a0a0aa;
+      --color-text-inverse:   #ffffff;
+      --color-primary:        #34A9DE;
+      --color-primary-hover:  #2696C9;
+      --color-primary-active: #156D94;
+      --color-primary-light:  rgba(0, 87, 184, 0.08);
+      --color-primary-border: rgba(0, 87, 184, 0.22);
+      --color-accent:         #34A9DE;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.09), 0 2px 6px rgba(0,0,0,0.05);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.11), 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-xl: 0 24px 64px rgba(0,0,0,0.14), 0 8px 24px rgba(0,0,0,0.07);
+      --content-narrow: 640px;
+      --content-default: 960px;
+      --content-wide: 1200px;
+    }
+	.qr-code-section {
+		margin-top: var(--space-8);
+		padding-bottom: 20px;
+		display: block;
+	}
+	.qr-code-card {
+		display: inline-block;
+		background: #ffffff;
+		border: 1px solid var(--color-border);
+		border-radius: var(--radius-xl);
+		padding: var(--space-4);
+		transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+	}
+	.qr-code-card:hover {
+		box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+		transform: translateY(-10px);
+		border-color: var(--color-primary);
+	}
+	.qr-code-img {
+		width: 350px;
+		height: 350px;
+		object-fit: contain;
+		border-radius: var(--radius-md);
+		display: block;
+	}
+    /* DARK MODE */
+    [data-theme="dark"] {
+      --color-bg:             #0e0e12;
+      --color-surface:        #17171e;
+      --color-surface-2:      #1e1e27;
+      --color-surface-offset: #0b0b0f;
+      --color-divider:        #252530;
+      --color-border:         rgba(255,255,255,0.07);
+      --color-text:           #e8e8f0;
+      --color-text-muted:     #8888a0;
+      --color-text-faint:     #444458;
+      --color-text-inverse:   #0e0e12;
+      --color-primary:        #00a2e8;
+      --color-primary-hover:  #26B7F0;
+      --color-primary-active: #0081B8;
+      --color-primary-light:  rgba(74, 143, 232, 0.10);
+      --color-primary-border: rgba(74, 143, 232, 0.28);
+      --color-accent:         #FF6600;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.45);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.55);
+      --shadow-xl: 0 24px 64px rgba(0,0,0,0.65);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--space-16);
+    }
+    body {
+      min-height: 100dvh;
+      line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    input, button, textarea, select { font: inherit; color: inherit; }
+    h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; font-family: var(--font-display); }
+    p, li { text-wrap: pretty; }
+    button { cursor: pointer; background: none; border: none; }
+    a { transition: color var(--transition-interactive); }
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+      border-radius: var(--radius-sm);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+    }
+    .skip-link {
+      position: absolute; top: -100%; left: var(--space-4);
+      background: var(--color-primary); color: #fff;
+      padding: var(--space-2) var(--space-4); border-radius: var(--radius-md);
+      font-size: var(--text-sm); font-weight: 700; z-index: 1000;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: var(--space-4); }
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: var(--shadow-sm);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    .header-inner {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      padding: var(--space-3) var(--space-6);
+      display: flex; align-items: center; justify-content: space-between; gap: var(--space-4);
+    }
+    .header-logo {
+      display: flex; align-items: center; gap: var(--space-3);
+      text-decoration: none; color: var(--color-text);
+    }
+    .header-logo img { height: 34px; width: auto; }
+    .header-logo-text {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    .logo-tech { color: #00a2e8; }
+    .logo-integrity { color: var(--color-text); }
+    .header-actions { display: flex; align-items: center; gap: var(--space-3); }
+    .theme-toggle {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: var(--radius-full);
+      color: var(--color-text-muted);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+      transition: color var(--transition-interactive), background var(--transition-interactive), border-color var(--transition-interactive);
+    }
+    .theme-toggle:hover { color: var(--color-primary); background: var(--color-primary-light); border-color: var(--color-primary-border); }
+    .btn-header-cta {
+      background: var(--color-primary);
+      color: #fff;
+      padding: var(--space-2) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm); font-weight: 700;
+      text-decoration: none;
+      transition: background var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
+      box-shadow: 0 2px 8px rgba(0,87,184,0.25);
+    }
+    .btn-header-cta:hover { background: var(--color-primary-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,87,184,0.35); }
+    .btn-header-cta:active { transform: translateY(0); }
+    .hero-section {
+      background: #E8E8E8 !important;
+      padding: clamp(var(--space-10), 5vw, var(--space-16)) var(--space-6) 0;
+    }
+    .hero-inner {
+      max-width: var(--content-wide);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-text-block {
+      width: 100%;
+      max-width: 820px;
+      text-align: center;
+      padding-bottom: var(--space-8);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      background: rgba(0, 162, 232, 0.10);
+      border: 1px solid rgba(0, 162, 232, 0.22);
+      color: #00a2e8;
+      font-size: var(--text-xs); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-5);
+      animation: fadeSlideUp 0.6s ease both;
+    }
+	.hero-badge-dot {
+	  width: 6px; 
+	  height: 6px;
+	  background: #00a2e8;
+	  border-radius: 50%;
+	  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	}
+	@keyframes pulse {
+	  0%{transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 162, 232, 0.7);}
+	  70% {transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 162, 232, 0);}
+	  100% {transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 162, 232, 0);}
+	}
+    .hero-title {
+      font-size: var(--text-3xl);
+      font-weight: 800;
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      color: #141418;
+      margin-bottom: var(--space-4);
+      animation: fadeSlideUp 0.6s 0.08s ease both;
+    }
+    .hero-title .accent { color: #00a2e8; }
+    .hero-subtitle {
+      font-size: var(--text-base);
+      color: #52525c;
+      line-height: 1.7;
+      max-width: 60ch;
+      margin: 0 auto var(--space-6);
+      animation: fadeSlideUp 0.6s 0.16s ease both;
+    }
+    .hero-stats {
+      display: flex; gap: var(--space-10); justify-content: center;
+      animation: fadeSlideUp 0.6s 0.24s ease both;
+    }
+    .hero-stat-value {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      color: #00a2e8;
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: var(--text-xs);
+      color: #52525c;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: var(--space-1);
+    }
+    .hero-image-seamless {
+      width: 100%;
+      max-width: 900px;
+      display: block;
+      animation: fadeSlideUp 0.7s 0.1s ease both;
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .counter-strip {
+      background: var(--color-primary);
+      padding: var(--space-5) var(--space-6);
+    }
+    .counter-strip-inner {
+      max-width: var(--content-default);
+      margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: var(--space-6); flex-wrap: wrap;
+    }
+    .counter-text { color: #fff; font-family: var(--font-display); }
+    .counter-text-main { font-size: var(--text-xl); font-weight: 800; line-height: 1.2; }
+    .counter-text-main #szamlalo { font-size: var(--text-2xl); }
+    .counter-text-sub { font-size: var(--text-sm); opacity: 0.85; margin-top: var(--space-1); }
+    .counter-arrow {
+      color: rgba(255,255,255,0.65);
+      display: flex; align-items: center; gap: var(--space-2);
+      font-size: var(--text-sm); font-weight: 600;
+      text-decoration: none;
+      transition: color var(--transition-interactive), gap var(--transition-interactive);
+    }
+    .counter-arrow:hover { color: #fff; gap: var(--space-3); }
+    .section { padding: clamp(var(--space-12), 6vw, var(--space-20)) var(--space-6); }
+    .section-inner { max-width: var(--content-default); margin: 0 auto; }
+    .section-tag {
+      font-size: 22px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.10em;
+      color: var(--color-primary); margin-bottom: var(--space-6);
+    }
+    .section-title {
+      font-size: var(--text-2xl); font-weight: 800;
+      letter-spacing: -0.025em; color: var(--color-text);
+      margin-bottom: var(--space-5);
+    }
+    .section-lead {
+      font-size: var(--text-lg); color: var(--color-text-muted);
+      max-width: 62ch; line-height: 1.65; margin-bottom: var(--space-10);
+    }
+    .why-section {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+      gap: var(--space-5);
+    }
+    .reason-card {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      transition: box-shadow var(--transition-interactive), transform var(--transition-interactive), border-color var(--transition-interactive);
+      opacity: 0; transform: translateY(20px);
+    }
+    .reason-card.visible { animation: cardReveal 0.5s ease forwards; }
+    @keyframes cardReveal { to { opacity: 1; transform: translateY(0); } }
+    .reason-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--color-primary-border); }
+    .reason-icon { font-size: 1.75rem; margin-bottom: var(--space-3); }
+    .reason-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
+    .reason-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+    .sign-section {
+      background: var(--color-bg);
+      padding: clamp(var(--space-12), 6vw, var(--space-20)) var(--space-6);
+    }
+    .sign-section-intro {
+      max-width: var(--content-default);
+      margin: 0 auto var(--space-12);
+    }
+    .sign-section-intro .section-title { max-width: 600px; }
+    .sign-content-block {
+      max-width: var(--content-default);
+      margin: 0 auto var(--space-12);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+	.sign-why-text h3 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-text); margin-bottom: var(--space-4);
+      letter-spacing: -0.015em;
+    }
+    .sign-why-text p {
+      font-size: var(--text-base);
+      color: var(--color-text-muted);
+      line-height: 1.72; margin-bottom: var(--space-4);
+    }
+    .sign-why-text p:last-child { margin-bottom: 0; }
+    .sign-why-text strong { color: var(--color-text); }
+    .sign-why-highlight {
+      background: var(--color-primary-light);
+      border-left: 3px solid var(--color-primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--space-4) var(--space-5);
+      margin-top: var(--space-5);
+    }
+    .sign-why-highlight p {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.6; margin: 0; font-weight: 500;
+    }
+    .sign-form-block {
+      max-width: var(--content-default);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+    .sign-form-header { margin-bottom: var(--space-6); }
+    .sign-form-title {
+      font-size: var(--text-xl); font-weight: 800;
+      letter-spacing: -0.02em; color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+    .sign-form-subtitle { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; }
+    .sign-counter-inline {
+      display: flex; align-items: center; gap: var(--space-3);
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3) var(--space-5);
+      margin-bottom: var(--space-6);
+    }
+    .sign-counter-number {
+      font-family: var(--font-display);
+      font-size: var(--text-xl); font-weight: 800;
+      color: var(--color-primary);
+    }
+    .sign-counter-label { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.4; }
+    .sign-counter-label strong { color: var(--color-text); display: block; }
+    .sign-info-panel {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+    }
+    .sign-info-panel h3 {
+      font-size: var(--text-lg); font-weight: 700;
+      color: var(--color-text); margin-bottom: var(--space-4);
+    }
+    .sign-info-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-4); }
+    .sign-info-item { display: flex; gap: var(--space-3); align-items: flex-start; }
+    .sign-info-dot {
+      width: 8px; height: 8px; min-width: 8px;
+      background: var(--color-primary);
+      border-radius: 50%; margin-top: 7px;
+    }
+    .sign-info-item-text { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
+    .sign-info-item-text strong { color: var(--color-text); }
+    .petition-form { display: flex; flex-direction: column; gap: var(--space-5); }
+    .form-group { display: flex; flex-direction: column; gap: var(--space-2); }
+    .form-label { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
+    .form-label span { color: var(--color-primary); }
+    .form-input {
+      background: var(--color-surface-2);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-base); color: var(--color-text);
+      transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive), background var(--transition-interactive);
+      width: 100%;
+    }
+    .form-input::placeholder { color: var(--color-text-faint); }
+    .form-input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-light); background: var(--color-surface); }
+    .form-input:hover:not(:focus) { border-color: var(--color-primary-border); }
+    .form-checkbox-row { display: flex; align-items: flex-start; gap: var(--space-3); }
+    .form-checkbox {
+      appearance: none; -webkit-appearance: none;
+      width: 20px; height: 20px; min-width: 20px;
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      background: var(--color-surface-2);
+      cursor: pointer; margin-top: 2px; position: relative;
+      transition: border-color var(--transition-interactive), background var(--transition-interactive);
+    }
+    .form-checkbox:checked { background: var(--color-primary); border-color: var(--color-primary); }
+    .form-checkbox:checked::after {
+      content: ''; position: absolute;
+      left: 5px; top: 2px;
+      width: 6px; height: 10px;
+      border: 2px solid #fff; border-top: none; border-left: none;
+      transform: rotate(45deg);
+    }
+    .form-checkbox-label { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.55; }
+    .form-checkbox-label a { color: var(--color-primary); text-decoration: none; }
+    .form-checkbox-label a:hover { text-decoration: underline; }
+    .btn-submit {
+      background: var(--color-primary); color: #fff;
+      padding: var(--space-4) var(--space-8);
+      border-radius: var(--radius-full);
+      font-family: var(--font-display); font-size: var(--text-base); font-weight: 800;
+      letter-spacing: -0.01em; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: var(--space-2);
+      transition: background var(--transition-interactive), transform var(--transition-interactive), box-shadow var(--transition-interactive);
+      box-shadow: 0 4px 20px rgba(0,87,184,0.3);
+    }
+    .btn-submit:hover { background: var(--color-primary-hover); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,87,184,0.4); }
+    .btn-submit:active { transform: translateY(0); }
+    .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .btn-submit-icon { width: 20px; height: 20px; transition: transform var(--transition-interactive); }
+    .btn-submit:hover .btn-submit-icon { transform: translateX(3px); }
+    .form-note { font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; line-height: 1.6; }
+    .form-success {
+      display: none; flex-direction: column; align-items: center; text-align: center;
+      padding: var(--space-10) var(--space-6);
+      background: var(--color-primary-light);
+      border: 1px solid var(--color-primary-border);
+      border-radius: var(--radius-xl); gap: var(--space-4);
+    }
+    .form-success.show { display: flex; animation: fadeSlideUp 0.5s ease; }
+    .success-icon {
+      width: 60px; height: 60px; background: var(--color-primary);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;
+    }
+    .success-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 800; color: var(--color-text); }
+    .success-text { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 42ch; }
+    .share-section {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: clamp(var(--space-10), 5vw, var(--space-16)) var(--space-6);
+      text-align: center;
+    }
+    .share-title { font-size: var(--text-xl); font-weight: 800; letter-spacing: -0.02em; margin-bottom: var(--space-3); }
+    .share-sub { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-8); }
+    .share-buttons { display: flex; gap: var(--space-3); justify-content: center; flex-wrap: wrap; }
+    .share-btn {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      padding: var(--space-3) var(--space-5); border-radius: var(--radius-full);
+      font-size: var(--text-sm); font-weight: 700; text-decoration: none;
+      transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), filter var(--transition-interactive);
+      border: none; cursor: pointer;
+    }
+    .share-btn:hover { transform: translateY(-2px); filter: brightness(1.1); box-shadow: var(--shadow-md); }
+    .share-btn.facebook { background: #1877F2; color: #fff; }
+    .share-btn.twitter  { background: #000; color: #fff; }
+    .share-btn.discord  { background: #5865F2; color: #fff; }
+    .share-btn.copy     { background: var(--color-surface-2); color: var(--color-text); border: 1px solid var(--color-border); }
+    .site-footer {
+      background: var(--color-surface-offset);
+      border-top: 1px solid var(--color-border);
+      padding: clamp(var(--space-10), 4vw, var(--space-16)) var(--space-6);
+    }
+    .footer-inner {
+      max-width: var(--content-wide); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: var(--space-8); align-items: start;
+    }
+    .footer-brand-logo {
+      display: flex; align-items: center; gap: var(--space-3);
+      margin-bottom: var(--space-4); text-decoration: none;
+    }
+    .footer-brand-logo img { height: 28px; width: auto; }
+    .footer-brand-name {
+      font-family: var(--font-display); font-size: var(--text-base); font-weight: 800;
+    }
+    .footer-desc { font-size: var(--text-sm); color: var(--color-text-muted); max-width: 44ch; line-height: 1.65; margin-bottom: var(--space-4); }
+    .footer-initiative-note {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      max-width: 50ch;
+      line-height: 1.6;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
+    .footer-links { display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-end; }
+    .footer-links a { font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none; transition: color var(--transition-interactive); }
+    .footer-links a:hover { color: var(--color-primary); }
+    .footer-bottom {
+      max-width: var(--content-wide); margin: var(--space-8) auto 0;
+      padding-top: var(--space-6); border-top: 1px solid var(--color-border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: var(--space-3);
+    }
+    .footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); }
+    @media (max-width: 768px) {
+      .sign-content-block, .sign-form-block { grid-template-columns: 1fr; }
+      .header-logo-text { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-links { align-items: flex-start; }
+      .hero-stats { gap: var(--space-6); }
+    }
+    @media (max-width: 480px) {
+      .btn-header-cta { display: none; }
+      .counter-strip-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#alairas" class="skip-link">Ugrás az aláíráshoz</a>
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="https://www.techintegrity.hu" class="header-logo" target="_blank" rel="noopener noreferrer" aria-label="TechIntegrity főoldal">
+        <img src="https://database.techintegrity.hu/images/website/techintegrity_logo.png" alt="TechIntegrity logó" width="34" height="34" loading="eager">
+        <span class="header-logo-text">
+          <span class="logo-tech">Tech</span><span class="logo-integrity">Integrity</span>
+        </span>
+      </a>
+      <div class="header-actions">
+        <button class="theme-toggle" data-theme-toggle aria-label="Sötét mód váltása">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#alairas" class="btn-header-cta">Írd alá most!</a>
+      </div>
+    </div>
+  </header>
+  <section class="hero-section" aria-label="Petíció bevezető">
+    <div class="hero-inner">
+      <div class="hero-text-block">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Aktív kezdeményezés · 2026
+        </div>
+        <h1 class="hero-title"><span class="accent">Állítsuk meg</span> az informatikai drágulást!</h1>
+        <p class="hero-subtitle">A RAM- és SSD-árak kontrollálhatatlanul emelkednek, miközben a piaci szereplők a vásárlók szenvedélyére maximalizálják profitjukat. Ideje, hogy közösen hangot adjunk az elégedetlenségünknek.</p>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-value" id="szamlalo-hero">...</div>
+            <div class="hero-stat-label">Aláíró eddig</div>
+          </div>
+          <div>
+            <div class="hero-stat-value">10 000</div>
+            <div class="hero-stat-label">A célunk</div>
+          </div>
+        </div>
+      </div>
+      <img
+        class="hero-image-seamless"
+        src="https://database.techintegrity.hu/petition/allitsuk-meg.png"
+        alt="Állítsuk meg az informatikaipari drágulást - TechIntegrity kezdeményezés"
+        width="900" height="500"
+        loading="eager"
+        decoding="async"
+      >
+    </div>
+  </section>
+  <div class="counter-strip" role="status" aria-live="polite">
+    <div class="counter-strip-inner">
+      <div class="counter-text">
+        <div class="counter-text-main">
+          <span id="szamlalo">...</span> ember már aláírta.
+        </div>
+        <div class="counter-text-sub">Csatlakozz te is – minden aláírás számít.</div>
+      </div>
+      <a href="#alairas" class="counter-arrow" aria-label="Ugrás az aláírás részhez">
+        Aláírom
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <section class="section why-section" aria-labelledby="why-title">
+    <div class="section-inner">
+      <div class="section-tag">Miért fontos ez?</div>
+      <h2 class="section-title" id="why-title">A piac nem véd meg minket, ezért nekünk kell cselekedni.</h2>
+      <p class="section-lead">A memória- és tárolóárak mesterséges manipulációja közvetlen hatással van minden számítógép-felhasználóra, fejlesztőre és cégtulajdonosra. Ez nem elmélet, hanem a mi pénztárcánk.</p>
+      <div class="reasons-grid" id="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-icon">📈</div>
+          <div class="reason-title">Indokolatlan áremelkedés</div>
+          <p class="reason-desc">A DDR5 RAM és NVMe SSD árak az elmúlt évben messze meghaladják a gyártási költségek növekedését. Ez nem csak profitoptimalizálás miatt lett így, hanem annak okáért is, hogy az eladó cégek, akik kedvezményes áron felvásárolhatják az irdatlan mennyiségű gépalkatrészeket, mesterséges intelligencia "fejlesztésére" pazarolhassák mind. Az árakra nézve ez egyértelműen nem piaci szükségszerűség, de méghozzá nem is "fejlesztés" egy olyan technológiának, amelyre nincs és soha nem lesz szükségünk.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">🏭</div>
+          <div class="reason-title">Versenyszerű, elpolitizált piac</div>
+          <p class="reason-desc">Néhány meghatározó gyártó együttesen uralja a piacot, versenyhiányos körülményeket teremtve az árképzésben, melyeket végül a vásárló fizet meg. Ennek következtében már nem csak a gyártók, hanem az eladó cégek is egyaránt profitálnak, mind a felesleges techonlógiából és a politikailag befolyásolt finanszírozásból.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">💸</div>
+          <div class="reason-title">Vásárlókat terheli</div>
+          <p class="reason-desc">A drágulás végső soron mindig a végfelhasználót éri el: legyen szó egy privát PC-építőről, egy kis- és középvállalkozásról, vagy egy nagyvállalati IT-infrastruktúráról.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">🇪🇺</div>
+          <div class="reason-title">Szabályozói nyomás kell</div>
+          <p class="reason-desc">Az EU versenyhatóságának és a nemzeti fogyasztóvédelmi szerveknek foglalkozni kell az informatikai alapanyagpiac transzparenciájával és az árkartell-kockázatokkal.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">🔊</div>
+          <div class="reason-title">A közösség hangja számít</div>
+          <p class="reason-desc">Minél több aláírás, annál erősebb az üzenet a döntéshozók és a nyilvánosság felé. Ez a kezdeményezés pontosan ezt az üzenetet közvetíti.</p>
+        </div>
+        <div class="reason-card">
+          <div class="reason-icon">🛡️</div>
+          <div class="reason-title">Fogyasztói jogok védelme</div>
+          <p class="reason-desc">Az átlátható és igazságos árazás alapvető fogyasztói jog. Erre emlékeztetjük az ipart és a szabályozókat közös, koordinált fellépéssel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="sign-section" id="alairas" aria-labelledby="sign-main-title">
+    <div class="sign-content-block">
+      <div class="sign-why-text">
+        <div class="section-tag">Csatlakozz a mozgalomhoz</div>
+        <h2 class="section-title" id="sign-main-title" style="margin-bottom: var(--space-10);">Írd alá a petíciót</h2>
+        <h3>Miért éri meg aláírni?</h3>
+        <p>A te aláírásod a sok közül nem egy szám, hanem egy hangos üzenet a piacnak és a döntéshozóknak, hogy a fogyasztók <strong>nem fogadják el tétlenül</strong> az indokolatlan ármanipulációt.</p>
+        <p>Minden egyes aláíró növeli a nyomást a gyártókra és az EU versenyhatóságára, hogy <strong>vizsgálják ki az árképzési gyakorlatokat</strong>, és tegyenek lépéseket a fogyasztói érdekek védelmében.</p>
+        <p>Ez egy <strong>civil kezdeményezés</strong>. Nem lobbiérdek vagy kereskedelmi szándék miatt, hanem kizárólag a közösség érdekét szolgálva, a közösség erejéből jött létre.</p>
+<div class="sign-why-highlight">
+          <p>„Amikor a piac elhallgattatja az egyéni hangokat, a közösség hangja az egyetlen, amit nem lehet figyelmen kívül hagyni."</p>
+        </div>
+
+        <div class="qr-code-section">
+          <div class="qr-code-card">
+            <img src="https://database.techintegrity.hu/petition/petition-qr-code.png" alt="TechIntegrity Petíció QR kód" class="qr-code-img" loading="lazy">
+          </div>
+        </div>
+        </div> <div> <div class="sign-info-panel">
+          <h3>Miért most, és mi ez?</h3>
+          <ul class="sign-info-list" role="list">
+            <li class="sign-info-item">
+              <span class="sign-info-dot" aria-hidden="true"></span>
+              <span class="sign-info-item-text"><strong>A DDR5 RAM-árak</strong>, főleg 2025 és 2026 között, a vártnál sokkal magasabban kezdtek felmenni, miközben a gyártási kapacitás bővült. Ez is azt tükrözi, hogy valójában a gyártóknak maradt RAM-uk is, csak olyan cégeknek adják tovább, amik a mesterséges intelligencia fejlesztésére költik az irdatlan mennyiségű RAM-ot. Ebben nekünk semmi jó nincs.</span>
+            </li>
+            <li class="sign-info-item">
+              <span class="sign-info-dot" aria-hidden="true"></span>
+              <span class="sign-info-item-text"><strong>Az NVMe- és egyéb SSD-k</strong> a rohadtul dráguló RAM-ok mellett szintén nem maradtak ki, ahogy ezt a piacon láthattuk az elmúlt években. Az áresés vagy lelassult, vagy megfordult, annak ellenére, hogy a NAND flash alapanyag ára csökkent.</span>
+            </li>
+            <li class="sign-info-item">
+              <span class="sign-info-dot" aria-hidden="true"></span>
+              <span class="sign-info-item-text"><strong>Három gyártó</strong> együttesen a globális DRAM-piac több mint 90%-át uralja. Ez a három gyártó nem más, mint a Samsung, az SK Hynix és a Micron. Ez is azt jelenti, hogy a kisebb gyártók gyakorlatilag semmit nem tudnak tenni a drágulás ellen, és kizárólag a külső döntések (például a vásárlók cselekedete) tudják valójában befolyásolni a piacot.</span>
+            </li>
+            <li class="sign-info-item">
+              <span class="sign-info-dot" aria-hidden="true"></span>
+              <span class="sign-info-item-text"><strong>Az Európai Bizottság</strong> már vizsgált hasonló chippiaci ügyeket, tehát a fogyasztói nyomás gyorsítja a döntéshozatalt. És ez még nem is politikai.</span>
+            </li>
+            <li class="sign-info-item">
+              <span class="sign-info-dot" aria-hidden="true"></span>
+              <span class="sign-info-item-text"><strong>Ezek mellett politikai befolyás is fennáll</strong>, mivel a Magyarországon lévő áfakulcsok és különadók közbelépése az informatikaipari alkatrészek eladását is befolyásolják. Az Eurostat hivatalos adatai alapján Magyarországon a harmadik legnagyobb a high-tech informatikai gyártásban dolgozók aránya az EU-ban, amely azt bizonyítja hogy a bel-, ezáltal a külpolitikai döntések is hatalmas hatást nyomnak az informatikaipari világpiacra. Magyarországból érkezik a többi EU-s tagállamba az egyik legtöbb számítógép-alkatrész, tehát van a legkisebb petíció is csodákra lehet képes.</span>
+            </i>
+            <li class="sign-info-item">
+              <span class="sign-info-dot" aria-hidden="true"></span>
+              <span class="sign-info-item-text">Az aláírás <strong>teljesen ingyenes</strong>, az e-mail cím nem kerül nyilvánosságra, és kizárólag a kezdeményezés nyilvántartásában szerepel.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="sign-form-block">
+      <div class="sign-info-panel">
+        <div class="sign-counter-inline">
+          <div class="sign-counter-number" id="szamlalo-form">...</div>
+          <div class="sign-counter-label">
+            <strong>ember már aláírta</strong>
+            Csatlakozz hozzájuk!
+          </div>
+        </div>
+        <div class="sign-form-header">
+          <div class="sign-form-title">Az aláírás menete</div>
+          <p class="sign-form-subtitle">Add meg neved és e-mail címed, fogadd el az adatkezelést, majd kattints az aláírás gombra. Ennyi.</p>
+        </div>
+        <ul class="sign-info-list" role="list">
+          <li class="sign-info-item">
+            <span class="sign-info-dot" aria-hidden="true"></span>
+            <span class="sign-info-item-text">Az aláírás azonnal rögzítésre kerül a kezdeményezés adatbázisában.</span>
+          </li>
+          <li class="sign-info-item">
+            <span class="sign-info-dot" aria-hidden="true"></span>
+            <span class="sign-info-item-text">A számlálón valós időben látod, hányan csatlakoztak már.</span>
+          </li>
+          <li class="sign-info-item">
+            <span class="sign-info-dot" aria-hidden="true"></span>
+            <span class="sign-info-item-text">Az adataidat nem adjuk ki harmadik félnek, kizárólag a petíció céljára tároljuk.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="sign-form-wrap">
+        <form class="petition-form" id="peticioForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="nev">Teljes neved <span>*</span></label>
+            <input class="form-input" type="text" id="nev" name="nev" placeholder="Példa János" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail címed <span>*</span></label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="pelda@email.com" required autocomplete="email">
+          </div>
+          <div class="form-checkbox-row">
+            <input class="form-checkbox" type="checkbox" id="adatkezeles" name="adatkezeles" required>
+            <label class="form-checkbox-label" for="adatkezeles">
+              Elfogadom, hogy adataimat a TechIntegrity Petíció kezdeményezési projekt kizárólag a petíció céljára tárolja.<br>Az e-mail cím nem kerül nyilvánosságra, és harmadik félnek nem adjuk át.
+            </label>
+          </div>
+            <div id="cf-turnstile-container" data-sitekey="0x4AAAAAADVmnWnVo9h6IUhC" data-theme="auto" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired" style="margin-bottom:0.75rem;"></div>
+          <button class="btn-submit" type="submit" id="submitBtn">
+            Aláírom a petíciót
+            <svg class="btn-submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <p class="form-note">🔒 Adataid biztonságosan vannak tárolva és nem kerülnek harmadik félhez.</p>
+        </form>
+        <div class="form-success" id="formSuccess" role="alert">
+          <div class="success-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <div class="success-title">Köszönjük az aláírást!</div>
+          <p class="success-text">Sikeresen csatlakoztál a TechIntegrity kezdeményezéshez. Oszd meg ismerőseiddel is – minél több hang, annál erősebb az üzenet!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="share-section" aria-label="Megosztás">
+    <div class="section-inner" style="text-align:center;">
+      <h2 class="share-title">Terjeszd a szót!</h2>
+      <p class="share-sub">Minél több ember hall erről, annál erősebb az üzenet. Oszd meg közösségeiddel!</p>
+      <div class="share-buttons">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://peticio.techintegrity.hu" target="_blank" rel="noopener noreferrer" class="share-btn facebook" aria-label="Megosztás Facebookon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="https://twitter.com/intent/tweet?text=Írd%20alá%20a%20petíciót%20az%20informatikaipari%20drágulás%20ellen!%20%23TechIntegrity&url=https://peticio.techintegrity.hu" target="_blank" rel="noopener noreferrer" class="share-btn twitter" aria-label="Megosztás X-en">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+        </a>
+        <button class="share-btn copy" id="copyLinkBtn" aria-label="Link másolása">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Link másolása
+        </button>
+      </div>
+    </div>
+  </section>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="https://www.TechIntegrity.hu" class="footer-brand-logo" target="_blank" rel="noopener noreferrer" aria-label="TechIntegrity Honlap">
+          <img src="https://database.techintegrity.hu/images/website/techintegrity_logo.png" alt="TechIntegrity logó" width="28" height="28" loading="lazy">
+          <span class="footer-brand-name">
+            <span style="color:#00a2e8;">Tech</span><span class="logo-integrity">Integrity</span>
+          </span>
+        </a>
+        <p class="footer-desc">Egy közösségi kezdeményezési projekt, amelynek célja felhívni a figyelmet a dráguló informatikai piac torzulásaira és a fogyasztói jogok védelmére.</p>
+        <div class="footer-initiative-note">A TechIntegrity Aláírási Petíció egy önálló kezdeményezési projekt.<br>Kizárólag a közösség érdekéért, és a vásárlók melletti kiállásért jött létre.</div>
+      </div>
+      <nav class="footer-links" aria-label="Lábléc navigáció">
+        <a href="https://www.TechIntegrity.hu" target="_blank" rel="noopener noreferrer">TechIntegrity Honlap</a>
+        <a href="#alairas">Petíció aláírása</a>
+        <a href="mailto:Business@TechIntegrity.hu">Kapcsolat</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">&copy; 2026 TechIntegrity Petíció Kezdeményezési Projekt. Minden jog fenntartva.</span>
+      <span class="footer-copy">Honlapunk: <a href="https://www.TechIntegrity.hu" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);text-decoration:none;">www.TechIntegrity.hu</a></span>
+    </div>
+  </footer>
+  <script>
+    // === TURNSTILE ===
+    var turnstileToken = null;
+    function onTurnstileSuccess(token) {
+      turnstileToken = token;
+      updateSubmitBtn();
+    }
+    function onTurnstileExpired() {
+      turnstileToken = null;
+      updateSubmitBtn();
+    }
+    // === COOLDOWN (cookie-alapú, 2 óra) ===
+    function getCooldownCookie() {
+      var m = document.cookie.match(/(?:^|;\s*)peticio_cooldown=([^;]*)/);
+      return m ? parseInt(m[1]) : null;
+    }
+    function setCooldownCookie() {
+      var exp = new Date(Date.now() + 2 * 60 * 60 * 1000);
+      document.cookie = 'peticio_cooldown=' + Date.now() + '; expires=' + exp.toUTCString() + '; path=/; SameSite=Lax';
+    }
+    function isOnCooldown() {
+      var ts = getCooldownCookie();
+      return ts ? (Date.now() - ts) < 2 * 60 * 60 * 1000 : false;
+    }
+    function updateSubmitBtn() {
+      var btn = document.getElementById('submitBtn');
+      if (!btn) return;
+      var ok = !isOnCooldown() && !!turnstileToken;
+      btn.disabled = !ok;
+      btn.style.opacity = ok ? '' : '0.5';
+      btn.style.cursor = ok ? '' : 'not-allowed';
+    }
+    (function(){
+      const t = document.querySelector('[data-theme-toggle]');
+      const r = document.documentElement;
+      let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      r.setAttribute('data-theme', d);
+      function updateIcon() {
+        if (!t) return;
+        t.innerHTML = d === 'dark'
+          ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        t.setAttribute('aria-label', 'Váltás ' + (d === 'dark' ? 'világos' : 'sötét') + ' módra');
+      }
+      updateIcon();
+      if (t) t.addEventListener('click', () => {
+        d = d === 'dark' ? 'light' : 'dark';
+        r.setAttribute('data-theme', d);
+        updateIcon();
+      });
+    })();
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzF7ERTvC2CMRPZ5crv8fJOl7vwPwZiwuxYRxhe2vB7BzUVxWfOM_UPqHADIwzG8e_S/exec";
+    function updateAllCounters(count) {
+      ['szamlalo', 'szamlalo-hero', 'szamlalo-form'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el) el.innerText = count;
+      });
+    }
+    window.addEventListener('DOMContentLoaded', function() {
+      updateSubmitBtn();
+      if (isOnCooldown()) { var tsc = document.getElementById('cf-turnstile-container'); if(tsc) tsc.style.display='none'; }
+      fetch(SCRIPT_URL)
+        .then(function(r) { return r.json(); })
+        .then(function(data) { updateAllCounters(data.count); })
+        .catch(function() { updateAllCounters('...'); });
+    });
+    document.getElementById('peticioForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (isOnCooldown() || !turnstileToken) return;
+      var checkbox = document.getElementById('adatkezeles');
+      if (!checkbox.checked) {
+        checkbox.focus();
+        checkbox.style.outline = '2px solid #c0392b';
+        setTimeout(function() { checkbox.style.outline = ''; }, 2000);
+        return;
+      }
+      var submitBtn = document.getElementById('submitBtn');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Küldés folyamatban...';
+      }
+      var formData = {
+        name: document.getElementById('nev').value,
+        email: document.getElementById('email').value
+      };
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        cache: "no-cache",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      })
+      .then(function() {
+        setCooldownCookie();
+        turnstileToken = null;
+        var tsc = document.getElementById('cf-turnstile-container'); if(tsc) tsc.style.display='none';
+        document.getElementById('peticioForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+        var currentEl = document.getElementById('szamlalo');
+        var current = parseInt(currentEl ? currentEl.innerText : '0');
+        if (!isNaN(current)) updateAllCounters(current + 1);
+        document.getElementById('peticioForm').reset();
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Aláírom a petíciót <svg class="btn-submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        }
+      })
+      .catch(function(err) {
+        console.error("Beküldési hiba:", err);
+        alert("Hiba történt a küldés során, kérjük próbáld újra!");
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = 'Aláírom a petíciót <svg class="btn-submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        }
+      });
+    });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function() { entry.target.classList.add('visible'); }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reason-card').forEach(function(card) { observer.observe(card); });
+    document.getElementById('copyLinkBtn').addEventListener('click', function() {
+      var self = this;
+      var original = self.innerHTML;
+      navigator.clipboard.writeText('https://peticio.techintegrity.hu').then(function() {
+        self.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg> Másolva!';
+        setTimeout(function() { self.innerHTML = original; }, 2000);
+      }).catch(function() {
+        prompt('Másold ki a linket:', 'https://peticio.techintegrity.hu');
+      });
+    });
+  </script>
+</body>
+</html>
