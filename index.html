@@ -794,7 +794,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div class="success-title">Köszönjük az aláírást!</div>
-          <p class="success-text">Sikeresen csatlakoztál a TechIntegrity kezdeményezéshez. Oszd meg ismerőseiddel is – minél több hang, annál erősebb az üzenet!</p>
+          <p class="success-text">Sikeresen csatlakoztál a TechIntegrity kezdeményezéshez. Oszd meg ismerőseiddel is, mert minél többen aláírják, annál erősebb az üzenet!</p>
         </div>
       </div>
     </div>
@@ -843,7 +843,6 @@
     </div>
   </footer>
   <script>
-    // === TURNSTILE ===
     var turnstileToken = null;
     function onTurnstileSuccess(token) {
       turnstileToken = token;
@@ -853,7 +852,6 @@
       turnstileToken = null;
       updateSubmitBtn();
     }
-    // === COOLDOWN (cookie-alapú, 2 óra) ===
     function getCooldownCookie() {
       var m = document.cookie.match(/(?:^|;\s*)peticio_cooldown=([^;]*)/);
       return m ? parseInt(m[1]) : null;
