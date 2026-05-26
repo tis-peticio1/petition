@@ -19,10 +19,7 @@
   <meta name="twitter:title" content="TechIntegrity Petíció">
   <meta name="twitter:description" content="TechIntegrity Aláírási Petíció – Kezdeményezési Projekt az informatikai infláció ellen. Írd alá, hogy megmutassuk: a RAM és az SSD nem a piaci kényuraké!">
   <meta name="twitter:image" content="https://database.techintegrity.hu/logos/tis-hero.png">
-  <!-- FONTING SYSTEM -->
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     :root {
       --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
@@ -586,7 +583,13 @@
       .btn-header-cta { display: none; }
       .counter-strip-inner { flex-direction: column; align-items: flex-start; }
     }
-  </style>
+	.turnstile-widget { transition: filter 180ms ease, transform 180ms ease; }
+	.turnstile-widget iframe { transition: filter 180ms ease, transform 180ms ease; }
+	html[data-theme='dark'] .turnstile-widget, html[data-theme='dark'] .turnstile-widget iframe { filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.98) !important; }
+	html[data-theme='light'] .turnstile-widget, html[data-theme='light'] .turnstile-widget iframe { filter: none !important; opacity: 1 !important; background: transparent !important; }
+</style>
+  <!-- FONTING SYSTEM -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <a href="#alairas" class="skip-link">Ugrás az aláíráshoz</a>
@@ -727,7 +730,7 @@
             </li>
             <li class="sign-info-item">
               <span class="sign-info-dot" aria-hidden="true"></span>
-              <span class="sign-info-item-text"><strong>Ezek mellett politikai befolyás is fennáll</strong>, mivel a Magyarországon lévő áfakulcsok és különadók közbelépése az informatikaipari alkatrészek eladását is befolyásolják. Az Eurostat hivatalos adatai alapján Magyarországon a harmadik legnagyobb a high-tech informatikai gyártásban dolgozók aránya az EU-ban, amely azt bizonyítja hogy a bel-, ezáltal a külpolitikai döntések is hatalmas hatást nyomnak az informatikaipari világpiacra. Magyarországból érkezik a többi EU-s tagállamba az egyik legtöbb számítógép-alkatrész, tehát van a legkisebb petíció is csodákra lehet képes.</span>
+              <span class="sign-info-item-text"><strong>Ezek mellett politikai befolyás is fennáll</strong>, mivel a Magyarországon lévő áfakulcsok és különadók közbelépése az informatikaipari alkatrészek eladását is befolyásolják. Az Eurostat hivatalos adatai alapján Magyarországon a harmadik legnagyobb a high-tech informatikai gyártásban dolgozók aránya az EU-ban, amely azt bizonyítja hogy a bel-, ezáltal a külpolitikai döntések is hatalmas hatást nyomnak az informatikaipari világpiacra. Magyarországból érkezik a többi EU-s tagállamba az egyik legtöbb számítógép-alkatrész, tehát a legkisebb petíció is csodákra lehet képes.</span>
             </i>
             <li class="sign-info-item">
               <span class="sign-info-dot" aria-hidden="true"></span>
@@ -781,7 +784,7 @@
               Elfogadom, hogy adataimat a TechIntegrity Petíció kezdeményezési projekt kizárólag a petíció céljára tárolja.<br>Az e-mail cím nem kerül nyilvánosságra, és harmadik félnek nem adjuk át.
             </label>
           </div>
-            <div id="cf-turnstile-container" class="cf-turnstile" data-sitekey="0x4AAAAAADVmnWnVo9h6IUhC" data-theme="auto" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired" style="margin-bottom:0.75rem;"></div>
+            <div id="cf-turnstile-container" class="cf-turnstile turnstile-widget" data-sitekey="0x4AAAAAADVmnWnVo9h6IUhC" data-theme="light" data-callback="onTurnstileSuccess" data-expired-callback="onTurnstileExpired" style="margin-bottom:0.75rem;"></div>
           <button class="btn-submit" type="submit" id="submitBtn">
             Aláírom a petíciót
             <svg class="btn-submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -841,6 +844,7 @@
       <span class="footer-copy">Honlapunk: <a href="https://www.TechIntegrity.hu" target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);text-decoration:none;">www.TechIntegrity.hu</a></span>
     </div>
   </footer>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6f9ab6c09d4945b3ac0da366d03cf269"}'></script> <!-- ANALYTICS -->
   <script>
     var turnstileToken = null;
@@ -875,7 +879,7 @@
     (function(){
       const t = document.querySelector('[data-theme-toggle]');
       const r = document.documentElement;
-      let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+      let d = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light');
       r.setAttribute('data-theme', d);
       function updateIcon() {
         if (!t) return;
@@ -888,6 +892,7 @@
       if (t) t.addEventListener('click', () => {
         d = d === 'dark' ? 'light' : 'dark';
         r.setAttribute('data-theme', d);
+        localStorage.setItem('theme', d);
         updateIcon();
       });
     })();
